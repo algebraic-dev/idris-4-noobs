@@ -1,0 +1,10 @@
+.menu-item {
+  background: linear-gradient(#000, #000) right bottom/0 2px no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s ease;
+}
+
+.menu-item:hover {
+  background-position: left bottom;
+  background-size: 100% 2px;
+}

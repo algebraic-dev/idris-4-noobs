@@ -1,10 +1,7 @@
 import { readPosts } from '@lib/posts'
 
-
 const Post = () => {
-  return (
-    <div className="wrapper"></div>
-  )
+  return <div className="wrapper"></div>
 }
 
 export const getStaticProps = async () => {
