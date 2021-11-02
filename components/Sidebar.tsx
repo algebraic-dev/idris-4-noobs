@@ -8,6 +8,7 @@ interface Props {
   blackTheme: boolean
   onClick: () => void
   fileTree: (PostDir | PostFile)[]
+  selected: PostFile
 }
 
 const Logo = () => (
@@ -35,7 +36,13 @@ const scrollBar = {
   },
 }
 
-const Sidebar = ({ enabled, blackTheme, onClick, fileTree }: Props) => (
+const Sidebar = ({
+  enabled,
+  blackTheme,
+  onClick,
+  fileTree,
+  selected,
+}: Props) => (
   <Box
     w={['100vw', '20rem']}
     h="100vh"
@@ -61,7 +68,7 @@ const Sidebar = ({ enabled, blackTheme, onClick, fileTree }: Props) => (
       </Center>
     </Flex>
     <Box paddingTop="10px">
-      <ArticleTree fileTree={fileTree}></ArticleTree>
+      <ArticleTree fileTree={fileTree} selected={selected}></ArticleTree>
     </Box>
   </Box>
 )
