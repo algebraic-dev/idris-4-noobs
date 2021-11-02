@@ -11,6 +11,7 @@ const Title = ({ children }: Props) => (
     textColor="brand.text-title"
     margin="12"
     marginTop="8"
+    marginBottom="0"
     textAlign="center"
   >
     {children}

@@ -20,7 +20,7 @@ const Module = ({ name }: { name: string }) => (
   </Box>
 )
 
-const File = ({ name }: { name: string }) => (
+const File = ({ name, selected }: { name: string; selected: boolean }) => (
   <Box fontFamily="lato" textColor="brand.text-main" fontSize="15">
     {name}
   </Box>
@@ -30,10 +30,12 @@ const ArticleItem = ({
   fileTree,
   depth,
   url,
+  selected,
 }: {
   fileTree: PostDir | PostFile
   depth: number
   url: string
+  selected: PostFile
 }) => {
   switch (fileTree.type) {
     case 'Dir': {
@@ -45,7 +47,7 @@ const ArticleItem = ({
           margin="0"
         >
           <AccordionItem border="none" p="0">
-            <AccordionButton margin="0px" py={2}>
+            <AccordionButton borderRadius="7px" margin="0px" py={2}>
               <Module name={fileTree.name}></Module>
             </AccordionButton>
             <AccordionPanel py={0}>
@@ -53,6 +55,7 @@ const ArticleItem = ({
                 <ArticleItem
                   depth={depth + 1}
                   key={tree.filename}
+                  selected={selected}
                   fileTree={tree}
                   url={
                     url + '/' + fileTree.name.toLowerCase().replace(/ /g, '-')
@@ -66,9 +69,24 @@ const ArticleItem = ({
     }
     case 'File': {
       return (
-        <AccordionItem py={2} px={2} border="none">
+        <AccordionItem
+          py={2}
+          px={2}
+          my={1}
+          borderY="none"
+          borderRight="none"
+          borderLeftColor={selected == fileTree ? 'white' : 'transparent'}
+          borderLeftWidth="3px"
+          transition="0.2s background"
+          _hover={{
+            bgColor: 'rgba(0,0,0, 0.1)',
+          }}
+        >
           <a href={url + '/' + fileTree.filename}>
-            <File name={fileTree.data.data.title}></File>
+            <File
+              name={fileTree.data.data.title}
+              selected={selected == fileTree}
+            ></File>
           </a>
         </AccordionItem>
       )
@@ -76,7 +94,13 @@ const ArticleItem = ({
   }
 }
 
-const ArticleTree = ({ fileTree }: { fileTree: (PostDir | PostFile)[] }) => {
+const ArticleTree = ({
+  fileTree,
+  selected,
+}: {
+  fileTree: (PostDir | PostFile)[]
+  selected: PostFile
+}) => {
   return (
     <Accordion>
       {fileTree.map(tree => (
@@ -85,6 +109,7 @@ const ArticleTree = ({ fileTree }: { fileTree: (PostDir | PostFile)[] }) => {
           depth={0}
           fileTree={tree}
           key={tree.type == 'Dir' ? tree.name : tree.filename}
+          selected={selected}
         ></ArticleItem>
       ))}
     </Accordion>
