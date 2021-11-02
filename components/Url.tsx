@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Url = ({ children, href }: Props) => (
-  <Link href={href} textColor="blue.600">
+  <Link href={href} textDecoration="none" textColor="blue.600">
     {children}
   </Link>
 )

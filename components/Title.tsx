@@ -6,10 +6,11 @@ interface Props {
 
 const Title = ({ children }: Props) => (
   <Text
-    fontFamily="fonts.lato"
+    fontFamily="Lato"
     fontSize="5xl"
+    textColor="brand.text-title"
     margin="12"
-    marginTop="16"
+    marginTop="8"
     textAlign="center"
   >
     {children}

@@ -6,7 +6,7 @@ interface Props {
 
 const Paragraph = ({ children }: Props) => {
   return (
-    <Text marginBottom="5" textColor="gray.700" lineHeight="9">
+    <Text marginBottom="1" textColor="brand.text-faded" lineHeight="8">
       {children}
     </Text>
   )

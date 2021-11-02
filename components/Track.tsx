@@ -10,23 +10,31 @@ interface CircleProps {
 interface Trackable {
   title: string
   number: number
+  url: string
 }
 
-const Line = () => <Box width="16" height="1" bgColor="brand.principal"></Box>
+const Line = () => <Box width="16" height="1" bgColor="brand.main"></Box>
 
 const Circular = ({ marked, title, number }: CircleProps) => (
   <Box
     width="14"
     height="14"
-    bgColor="brand.principal"
-    color="white"
+    bgColor="brand.main"
+    color="brand.text-main"
     className="text-center"
     display="block"
     borderRadius="30px"
     textAlign="center"
   >
     <Text lineHeight="3.5rem">{number}</Text>
-    <Box height="0" marginTop="2" textColor="brand.principal">
+    <Box
+      height="0"
+      textTransform="uppercase"
+      fontSize="12"
+      marginTop="2"
+      textColor="brand.main"
+      width="fit-content"
+    >
       {title}
     </Box>
   </Box>
@@ -62,7 +70,7 @@ const Track = ({ tracks }: { tracks: Trackable[] }) => {
                 ),
               [mapped[0]]
             )
-        : 0}
+        : []}
     </Box>
   )
 }

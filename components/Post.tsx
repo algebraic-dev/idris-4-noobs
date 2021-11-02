@@ -37,10 +37,11 @@ const Post = ({ source, header, tracks }: Props) => (
     <Description>{header.description}</Description>
     <Track tracks={tracks}></Track>
     <Box
-      width={['90%', '80%', '60%']}
-      fontSize="xl"
+      width={['80%', '80%', '60%']}
+      fontSize="lg"
       textAlign="justify"
       margin="auto"
+      textColor="brand.text-faded"
     >
       <MDXRemote {...source} components={components} />
     </Box>
