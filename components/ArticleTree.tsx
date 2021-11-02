@@ -35,7 +35,7 @@ const ArticleItem = ({
   fileTree: PostDir | PostFile
   depth: number
   url: string
-  selected: PostFile
+  selected?: PostFile
 }) => {
   switch (fileTree.type) {
     case 'Dir': {
@@ -99,7 +99,7 @@ const ArticleTree = ({
   selected,
 }: {
   fileTree: (PostDir | PostFile)[]
-  selected: PostFile
+  selected?: PostFile
 }) => {
   return (
     <Accordion>

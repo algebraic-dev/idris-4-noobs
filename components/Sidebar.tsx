@@ -8,7 +8,7 @@ interface Props {
   blackTheme: boolean
   onClick: () => void
   fileTree: (PostDir | PostFile)[]
-  selected: PostFile
+  selected?: PostFile
 }
 
 const Logo = () => (
