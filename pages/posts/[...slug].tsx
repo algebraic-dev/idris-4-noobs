@@ -11,14 +11,8 @@ import Sidebar from '@components/Sidebar'
 import { useState } from 'react'
 import { Trackable } from '@components/Track'
 
-import {
-  findData,
-  genPath,
-  PostData,
-  PostDir,
-  PostFile,
-  readPosts,
-} from '@lib/posts'
+import { PostData, PostDir, PostFile, readPosts } from '@lib/posts'
+import { findData, genPath } from '@lib/post_utils'
 
 interface Props {
   source: MDXRemoteSerializeResult
@@ -53,7 +47,7 @@ const getTracks = (
       ([a, i]): Trackable => ({
         number: i + 1,
         title: a.data.data.title,
-        url: toUrl(slug[0]) + '/' + slug[1],
+        url: toUrl(slug[0]) + '/' + a.filename,
       })
     )
   return tracks
@@ -63,7 +57,8 @@ const Page = ({ source, data, tree, slug }: Props) => {
   const [state, setState] = useState(true)
 
   const tracks = getTracks(tree, slug)
-  console.log('TRACKS', tracks)
+
+  const post = findData(tree, slug) as PostFile
 
   return (
     <>
@@ -72,6 +67,7 @@ const Page = ({ source, data, tree, slug }: Props) => {
         blackTheme={false}
         onClick={() => setState(!state)}
         fileTree={tree}
+        selected={post}
       ></Sidebar>
       <Box
         marginLeft={['0rem', '0rem', state ? '20rem' : '0rem']}
@@ -91,7 +87,8 @@ export const getStaticProps = async (context: { params: ParseQuery }) => {
   const data = await fs.readFile('/tmp/.idris2noobs')
   const posts: (PostDir | PostFile)[] = JSON.parse(data.toString('utf-8'))
 
-  const post = findData(posts, context.params.slug) as PostData
+  // Ignores the possibility of null.
+  const post = findData(posts, context.params.slug)?.data as PostData
 
   return {
     props: {
