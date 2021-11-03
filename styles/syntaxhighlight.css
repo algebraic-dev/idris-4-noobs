@@ -37,7 +37,6 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
   padding: 30px;
 }
 

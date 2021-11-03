@@ -4,26 +4,43 @@ import styles from './index.module.css'
 import { VscMenu } from 'react-icons/vsc'
 
 interface Props {
-  children: String
+  children: string
+  color: string
 }
 
-const Item = ({ href, children }: { href: string; children: string }) => (
-  <Text textTransform="uppercase" className={styles['menu-item']}>
+const Item = ({
+  href,
+  children,
+  color,
+}: {
+  href: string
+  color: string
+  children: string
+}) => (
+  <Text
+    textTransform="uppercase"
+    textColor={color}
+    className={styles['menu-item']}
+  >
     <a href={href} className="bg-line menu-item">
       {children}
     </a>
   </Text>
 )
 
-const Menu = ({ onClick }: { onClick: () => void }) => (
-  <Flex margin="12">
+const Menu = ({ onClick, color }: { color: string; onClick: () => void }) => (
+  <Flex padding="12">
     <Text cursor="pointer">
-      <VscMenu size={20} onClick={() => onClick()} />
+      <VscMenu color={color} size={20} onClick={() => onClick()} />
     </Text>
     <Spacer />
     <Flex gridGap="10">
-      <Item href="#">home</Item>
-      <Item href="#">discord</Item>
+      <Item color={color} href="#">
+        home
+      </Item>
+      <Item color={color} href="#">
+        discord
+      </Item>
     </Flex>
   </Flex>
 )
