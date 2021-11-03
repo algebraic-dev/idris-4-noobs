@@ -1,4 +1,4 @@
-import { Text, Flex, Spacer } from '@chakra-ui/react'
+import { Text, Flex, Spacer, chakra } from '@chakra-ui/react'
 import styles from './index.module.css'
 
 import { VscMenu } from 'react-icons/vsc'
@@ -6,27 +6,17 @@ import { VscMenu } from 'react-icons/vsc'
 interface Props {
   children: string
   color: string
+  href: string
 }
 
-const Item = ({
-  href,
-  children,
-  color,
-}: {
-  href: string
-  color: string
-  children: string
-}) => (
-  <Text
-    textTransform="uppercase"
-    textColor={color}
-    className={styles['menu-item']}
-  >
-    <a href={href} className="bg-line menu-item">
+const Item = ({ href, children, color }: Props) => {
+  let theme = styles[color == 'white' ? 'menu-white' : 'menu-item']
+  return (
+    <chakra.a href={href} textColor={color} className={theme}>
       {children}
-    </a>
-  </Text>
-)
+    </chakra.a>
+  )
+}
 
 const Menu = ({ onClick, color }: { color: string; onClick: () => void }) => (
   <Flex padding="12">
@@ -35,7 +25,7 @@ const Menu = ({ onClick, color }: { color: string; onClick: () => void }) => (
     </Text>
     <Spacer />
     <Flex gridGap="10">
-      <Item color={color} href="#">
+      <Item color={color} href="/">
         home
       </Item>
       <Item color={color} href="#">

@@ -7,12 +7,14 @@ import { extendTheme } from '@chakra-ui/react'
 
 const colors = {
   brand: {
+    degrade: 'linear-gradient(95.12deg, #FE8450 1.96%, #CB2B3A 101.85%)',
     line: 'linear-gradient(#000, #000) right bottom/0 2px no-repeat',
     main: '#D73A49',
     'main-rgb': '215, 58, 73',
     'main-darker': '#932530',
     'text-main': 'white',
-    'text-faded': 'gray.600',
+    'text-faded': '#373737',
+    'text-side-faded': '#ffefef',
     'text-title': 'black',
   },
   fonts: {

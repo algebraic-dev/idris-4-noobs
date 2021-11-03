@@ -13,7 +13,7 @@ interface Trackable {
   url: string
 }
 
-const Line = () => <Box width="20" height="1" bgColor="brand.main"></Box>
+const Line = () => <Box width="12" height="1" bgColor="brand.main"></Box>
 
 const Circular = ({ marked, title, number, url }: CircleProps) => (
   <a href={'/posts/' + url}>

@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Spacer, Center, chakra } from '@chakra-ui/react'
+import { Box, Text, Flex, Spacer, chakra, Img, Center } from '@chakra-ui/react'
 import { PostDir, PostFile } from '@lib/posts'
 import { VscChromeClose } from 'react-icons/vsc'
 import ArticleTree from './ArticleTree'
@@ -12,16 +12,19 @@ interface Props {
 }
 
 const Logo = () => (
-  <Text
+  <Flex
     width={['fit-content', 'fit-content', '100%']}
     fontSize="25px"
-    textAlign="center"
     textColor="brand.text-main"
+    alignItems="end"
     fontWeight="600"
   >
-    Idris2
-    <chakra.span textColor="#94202B">Noobs</chakra.span>
-  </Text>
+    <Center margin="auto">
+      <Img src="/Logo.svg" mr="2" width={4} />
+      Idris2
+      <chakra.span textColor="#b02c38">Noobs</chakra.span>
+    </Center>
+  </Flex>
 )
 
 const scrollBar = {
@@ -60,11 +63,11 @@ const Sidebar = ({
     p="15px"
     css={scrollBar}
   >
-    <Flex paddingY="20px" textColor="brand.text-main" paddingX="10px">
+    <Flex paddingY="15px" textColor="brand.text-main" paddingX="10px">
       <Logo />
       <Spacer />
-      <Center>
-        <VscChromeClose size={20} onClick={() => onClick()} />
+      <Center display={{ md: 'none', lg: 'box' }}>
+        <VscChromeClose size={16} onClick={() => onClick()} />
       </Center>
     </Flex>
     <Box paddingTop="10px">

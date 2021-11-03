@@ -13,6 +13,7 @@ import { Trackable } from '@components/Track'
 
 import { PostData, PostDir, PostFile, readPosts } from '@lib/posts'
 import { findData, genPath } from '@lib/post_utils'
+import Pushable from '@components/Pushable'
 
 interface Props {
   source: MDXRemoteSerializeResult
@@ -55,11 +56,8 @@ const getTracks = (
 
 const Page = ({ source, data, tree, slug }: Props) => {
   const [state, setState] = useState(true)
-
   const tracks = getTracks(tree, slug)
-
   const post = findData(tree, slug) as PostFile
-
   return (
     <>
       <Sidebar
@@ -69,16 +67,12 @@ const Page = ({ source, data, tree, slug }: Props) => {
         fileTree={tree}
         selected={post}
       ></Sidebar>
-      <Box
-        marginLeft={['0rem', '0rem', state ? '20rem' : '0rem']}
-        transition="ease-in-out"
-        transitionDuration="700ms"
-        transitionTimingFunction="ease-in-out"
-      >
-        <Menu onClick={() => setState(!state)}></Menu>
+
+      <Pushable enabled={state} size="20em">
+        <Menu color={'black'} onClick={() => setState(!state)}></Menu>
         <Post source={source} header={data} tracks={tracks}></Post>
         <Box margin="100" width="100%"></Box>
-      </Box>
+      </Pushable>
     </>
   )
 }
@@ -102,12 +96,8 @@ export const getStaticProps = async (context: { params: ParseQuery }) => {
 
 export const getStaticPaths = async () => {
   const posts = await readPosts('posts')
-
   await fs.writeFile('/tmp/.idris2noobs', JSON.stringify(posts))
-
-  const pathTuple = genPath(posts)
-
-  const paths = pathTuple.map(([path, url]) => ({
+  const paths = genPath(posts).map(([path, url]) => ({
     params: {
       slug: path.split('/'),
     },

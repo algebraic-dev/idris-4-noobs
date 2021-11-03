@@ -11,17 +11,18 @@ import { PostDir, PostFile } from '@lib/posts'
 
 const Module = ({ name }: { name: string }) => (
   <Box
-    fontSize="15"
+    fontSize="12"
     fontWeight="bold"
     textColor="brand.text-main"
     fontFamily="lato"
+    textTransform="uppercase"
   >
     {name}
   </Box>
 )
 
 const File = ({ name, selected }: { name: string; selected: boolean }) => (
-  <Box fontFamily="lato" textColor="brand.text-main" fontSize="15">
+  <Box fontFamily="lato" textColor="brand.text-side-faded" fontSize="15">
     {name}
   </Box>
 )
@@ -75,7 +76,9 @@ const ArticleItem = ({
           my={1}
           borderY="none"
           borderRight="none"
-          borderLeftColor={selected == fileTree ? 'white' : 'transparent'}
+          borderLeftColor={
+            selected == fileTree ? 'brand.text-side-faded' : 'transparent'
+          }
           borderLeftWidth="3px"
           transition="0.2s background"
           _hover={{

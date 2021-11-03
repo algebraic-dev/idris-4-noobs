@@ -18,7 +18,8 @@ const Code = ({ className, children, width, my = 10 }: Props) => {
     <Box flexGrow={1} width="100%" w={width ? width : ''}>
       <pre>
         <ChakraCode
-          boxShadow="0px 10px 20px rgba(0, 0, 0, 0.12);"
+          border="1px solid grey"
+          boxShadow="none"
           width="100%"
           p={5}
           className={className}
