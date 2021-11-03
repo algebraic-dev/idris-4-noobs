@@ -14,14 +14,9 @@ const Header = ({ children }: Props) => {
       textColor="brand.text-title"
       marginY="12"
       marginBottom="2"
+      fontWeight="600"
     >
-      <Link
-        textDecoration="none"
-        href={`#${id}`}
-        id={id}
-        fontStyle="italic"
-        fontFamily="Crimson Text"
-      >
+      <Link textDecoration="none" href={`#${id}`} id={id} fontFamily="Lato">
         {children}
       </Link>
     </Box>

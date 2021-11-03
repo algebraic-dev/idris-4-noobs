@@ -6,11 +6,11 @@ interface Props {
 
 const Description = ({ children }: Props) => (
   <Text
-    fontSize="2xl"
+    fontSize="xl"
     textAlign="center"
     margin="auto"
     width={['80%', '60%', '50%']}
-    fontFamily="Crimson Text"
+    fontFamily="Lato"
     marginY="8"
     fontStyle="italic"
     className="leading-8 text-gray-600"
