@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+
 import 'styles/syntaxhighlight.css'
 import 'styles/global.css'
 
@@ -13,7 +14,7 @@ const colors = {
     'main-rgb': '215, 58, 73',
     'main-darker': '#932530',
     'text-main': 'white',
-    'text-faded': '#373737',
+    'text-faded': '#505050',
     'text-side-faded': '#ffefef',
     'text-title': 'black',
   },

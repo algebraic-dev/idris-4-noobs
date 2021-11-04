@@ -18,7 +18,13 @@ const Code = ({ className, children, width, p = 10, my = 10 }: Props) => {
   return (
     <Box m={0} flexGrow={1} w={width}>
       <chakra.pre p={p}>
-        <CCode border="1px solid grey" w="100%" p={5} className={className}>
+        <CCode
+          border="1px solid #afafaf"
+          borderRadius={5}
+          w="100%"
+          p={5}
+          className={className}
+        >
           {children}
         </CCode>
       </chakra.pre>

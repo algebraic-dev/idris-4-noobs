@@ -1,5 +1,4 @@
 import { Link, Box } from '@chakra-ui/react'
-import { chdir } from 'process'
 
 interface Props {
   children: string

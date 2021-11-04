@@ -1,4 +1,4 @@
-import { chakra, Text } from '@chakra-ui/react'
+import { chakra } from '@chakra-ui/react'
 
 interface Props {
   children: string
