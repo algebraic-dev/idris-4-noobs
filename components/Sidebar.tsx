@@ -13,14 +13,14 @@ interface Props {
 
 const Logo = () => (
   <Flex
-    width={['fit-content', 'fit-content', '100%']}
+    w={['fit-content', 'fit-content', '100%']}
     fontSize="25px"
     textColor="brand.text-main"
     alignItems="end"
     fontWeight="600"
   >
     <Center margin="auto">
-      <Img src="/Logo.svg" mr="2" width={4} />
+      <Img src="/Logo.svg" mr="2" w={4} />
       Idris2
       <chakra.span textColor="#b02c38">Noobs</chakra.span>
     </Center>
@@ -70,7 +70,7 @@ const Sidebar = ({
         <VscChromeClose size={16} onClick={() => onClick()} />
       </Center>
     </Flex>
-    <Box paddingTop="10px">
+    <Box pt="10px">
       <ArticleTree fileTree={fileTree} selected={selected}></ArticleTree>
     </Box>
   </Box>

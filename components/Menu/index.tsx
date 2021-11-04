@@ -1,7 +1,7 @@
 import { Text, Flex, Spacer, chakra } from '@chakra-ui/react'
-import styles from './index.module.css'
-
 import { VscMenu } from 'react-icons/vsc'
+
+import styles from './index.module.css'
 
 interface Props {
   children: string
@@ -19,7 +19,7 @@ const Item = ({ href, children, color }: Props) => {
 }
 
 const Menu = ({ onClick, color }: { color: string; onClick: () => void }) => (
-  <Flex padding="12">
+  <Flex p="12">
     <Text cursor="pointer">
       <VscMenu color={color} size={20} onClick={() => onClick()} />
     </Text>

@@ -1,21 +1,15 @@
+import { Box as Link, Text as Paragraph } from '@chakra-ui/react'
+import { FaArrowRight } from 'react-icons/fa'
+import { PostDir, PostFile } from '@lib/posts'
 import { readPosts } from '@lib/posts'
+import { useState } from 'react'
+
 import Sidebar from '@components/Sidebar'
 import Menu from '@components/Menu'
-import { PostDir, PostFile } from '@lib/posts'
-import { useState } from 'react'
-import Code from '@components/CodeBourded'
+import Code from '@components/Code'
 import Header from '@components/Header'
-import { FaArrowRight, FaSearch } from 'react-icons/fa'
-
-import {
-  Box as Link,
-  Text as Paragraph,
-  Flex,
-  Input,
-  InputGroup,
-  InputLeftElement,
-} from '@chakra-ui/react'
 import Pushable from '@components/Pushable'
+import { PostPaths } from '@lib/post_utils'
 
 const example = `IntOrString : (isInt : Bool) -> Type
 IntOrString True = Int
@@ -51,8 +45,8 @@ const Button = ({ children }: { children: string }) => (
   </Link>
 )
 
-const Index = ({ tree }: { tree: (PostDir | PostFile)[] }) => {
-  const [state, setState] = useState(false)
+const Index = ({ tree }: { tree: PostPaths }) => {
+  const [state, setState] = useState(true)
 
   return (
     <>
@@ -65,14 +59,14 @@ const Index = ({ tree }: { tree: (PostDir | PostFile)[] }) => {
 
       <Pushable enabled={state} size="20em">
         <Menu color="black" onClick={() => setState(!state)}></Menu>
-        <Link width={['90%', '80%', '80%']} margin="auto">
+        <Link w={['90%', '80%', '80%']} margin="auto">
           <Header my={0}>Its Idris!</Header>
           <Link
             display={{ md: 'box', lg: 'flex' }}
             gridGap={10}
             alignItems="center"
           >
-            <Paragraph width={{ md: '100%', lg: '50%' }} textAlign="justify">
+            <Paragraph w={{ md: '100%', lg: '50%' }} textAlign="justify">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               aliquam libero tortor. Aenean vulputate libero sit amet tempus
               pulvinar. Duis consequat semper ante eu rhoncus. Sed vel sapien
@@ -80,8 +74,8 @@ const Index = ({ tree }: { tree: (PostDir | PostFile)[] }) => {
               dolor sit amet, consectetur adipiscing elit. Maecenas aliquam
               libero tortor. Aeneconsectetur adipiscing elit. Maecenas aliquam
             </Paragraph>
-            <Link my={{ md: 10, lg: 0 }} width={{ md: '100%', lg: '50%' }}>
-              <Code my={6} className="language-idris">
+            <Link my={{ md: 10, lg: 0 }} w={{ md: '100%', lg: '50%' }}>
+              <Code my={6} p={0} className="language-idris">
                 {example}
               </Code>
             </Link>
@@ -109,7 +103,7 @@ const Index = ({ tree }: { tree: (PostDir | PostFile)[] }) => {
             tortor. Aenean vulputate libero sit amet tempus pulvinar. Duiss
             consequat semper ante eu rhoncus. Sed vel sapien aliquet
           </Paragraph>
-          <Link margin="100" width="100%"></Link>
+          <Link margin="100" w="100%"></Link>
         </Link>
       </Pushable>
     </>

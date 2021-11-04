@@ -32,12 +32,12 @@ interface Props {
 }
 
 const Post = ({ source, header, tracks }: Props) => (
-  <Box width="full" paddingTop="15">
+  <Box w="full" pt="15">
     <Title>{header.title}</Title>
     <Description>{header.description}</Description>
     <Track tracks={tracks}></Track>
     <Box
-      width={['80%', '80%', '60%']}
+      w={['80%', '80%', '60%']}
       fontSize="lg"
       textAlign="justify"
       margin="auto"

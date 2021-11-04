@@ -8,6 +8,7 @@ interface PostData {
 
 type PostFile = { type: 'File'; filename: string; data: PostData }
 type PostDir = { type: 'Dir'; name: string; posts: PostFile[] }
+type PostPaths = (PostDir | PostFile)[]
 
 const genPathFile = (postFile: PostFile): [string, string] => [
   postFile.filename,
@@ -20,17 +21,14 @@ const genPathDir = (postDir: PostDir): [string, string][] =>
     postDir.name + '/' + file.filename,
   ])
 
-const genPath = (list: (PostDir | PostFile)[]): [string, string][] =>
+const genPath = (list: PostPaths): [string, string][] =>
   list.map(a => (a.type == 'Dir' ? genPathDir(a) : [genPathFile(a)])).flat(1)
 
 // findURL from path
 
 const genUrl = (str: string) => str.toLowerCase().replace(/ /g, '-')
 
-function findData(
-  tree: (PostDir | PostFile)[],
-  path: string[]
-): PostFile | null {
+function findData(tree: PostPaths, path: string[]): PostFile | null {
   for (const node of tree) {
     if (node.type == 'File' && path[0] == node.filename) return node
     if (node.type == 'Dir' && path[0] == genUrl(node.name)) {
@@ -43,4 +41,4 @@ function findData(
 }
 
 export { genPath, findData, genUrl }
-export type { PostData, PostFile, PostDir }
+export type { PostData, PostFile, PostDir, PostPaths }

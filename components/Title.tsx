@@ -10,8 +10,8 @@ const Title = ({ children }: Props) => (
     fontSize="5xl"
     textColor="brand.text-title"
     margin="12"
-    marginTop="8"
-    marginBottom="0"
+    mt="8"
+    mb="0"
     textAlign="center"
   >
     {children}

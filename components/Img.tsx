@@ -9,9 +9,9 @@ const Img = ({ src, alt }: Props) => {
   // eslint-disable-next-line @next/next/no-img-element
   return (
     <Image
-      width="full"
+      w="full"
       borderRadius="md"
-      marginBottom="10"
+      mb="10"
       position="relative"
       src={src}
       alt={alt}

@@ -13,13 +13,13 @@ interface Trackable {
   url: string
 }
 
-const Line = () => <Box width="12" height="1" bgColor="brand.main"></Box>
+const Line = () => <Box w="12" h="1" bgColor="brand.main"></Box>
 
 const Circular = ({ marked, title, number, url }: CircleProps) => (
   <a href={'/posts/' + url}>
     <Box
-      width="14"
-      height="14"
+      w="14"
+      h="14"
       bgColor="brand.main"
       color="brand.text-main"
       className="text-center"
@@ -40,8 +40,8 @@ const Circular = ({ marked, title, number, url }: CircleProps) => (
       }}
     >
       <Box
-        width="100%"
-        height="100%"
+        w="100%"
+        h="100%"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -49,12 +49,12 @@ const Circular = ({ marked, title, number, url }: CircleProps) => (
         <Text>{number}</Text>
       </Box>
       <Box
-        height="0"
+        h="0"
         textTransform="uppercase"
         fontSize="11"
-        marginTop="4"
+        mt="4"
         textColor="brand.main"
-        width="30"
+        w="30"
         marginLeft="-100%"
         marginRight="-100%"
         textAlign="center"
@@ -78,11 +78,11 @@ const Track = ({ tracks }: { tracks: Trackable[] }) => {
 
   return (
     <Box
-      marginX="auto"
-      marginTop="12"
-      marginBottom="20"
+      mx="auto"
+      mt="12"
+      mb="20"
       alignItems="center"
-      width="fit-content"
+      w="fit-content"
       display="flex"
     >
       {mapped.length > 0

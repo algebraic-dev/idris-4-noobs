@@ -4,10 +4,22 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  chakra,
 } from '@chakra-ui/react'
 
 import { PostDir, PostFile } from '@lib/posts'
+import { PostPaths } from '@lib/post_utils'
+
+type ArticleItemProps = {
+  fileTree: PostDir | PostFile
+  depth: number
+  url: string
+  selected?: PostFile
+}
+
+type ArticleProps = {
+  fileTree: PostPaths
+  selected?: PostFile
+}
 
 const Module = ({ name }: { name: string }) => (
   <Box
@@ -21,23 +33,13 @@ const Module = ({ name }: { name: string }) => (
   </Box>
 )
 
-const File = ({ name, selected }: { name: string; selected: boolean }) => (
+const File = ({ name }: { name: string }) => (
   <Box fontFamily="lato" textColor="brand.text-side-faded" fontSize="15">
     {name}
   </Box>
 )
 
-const ArticleItem = ({
-  fileTree,
-  depth,
-  url,
-  selected,
-}: {
-  fileTree: PostDir | PostFile
-  depth: number
-  url: string
-  selected?: PostFile
-}) => {
+const ArticleItem = ({ fileTree, depth, url, selected }: ArticleItemProps) => {
   switch (fileTree.type) {
     case 'Dir': {
       return (
@@ -86,10 +88,7 @@ const ArticleItem = ({
           }}
         >
           <a href={url + '/' + fileTree.filename}>
-            <File
-              name={fileTree.data.data.title}
-              selected={selected == fileTree}
-            ></File>
+            <File name={fileTree.data.data.title}></File>
           </a>
         </AccordionItem>
       )
@@ -97,13 +96,7 @@ const ArticleItem = ({
   }
 }
 
-const ArticleTree = ({
-  fileTree,
-  selected,
-}: {
-  fileTree: (PostDir | PostFile)[]
-  selected?: PostFile
-}) => {
+const ArticleTree = ({ fileTree, selected }: ArticleProps) => {
   return (
     <Accordion>
       {fileTree.map(tree => (

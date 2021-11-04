@@ -9,9 +9,9 @@ const Description = ({ children }: Props) => (
     fontSize="xl"
     textAlign="center"
     margin="auto"
-    width={['80%', '60%', '50%']}
+    w={['80%', '60%', '50%']}
     fontFamily="Lato"
-    marginY="8"
+    my="8"
     fontStyle="italic"
     className="leading-8 text-gray-600"
   >
