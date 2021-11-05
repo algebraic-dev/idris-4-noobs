@@ -5,11 +5,11 @@ import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import fs from 'fs/promises'
 
+import Pushable from '@components/Pushable'
+import { Trackable } from '@components/Track'
+import Sidebar from '@components/Sidebar'
 import Post from '@components/Post'
 import Menu from '@components/Menu'
-import Sidebar from '@components/Sidebar'
-import { Trackable } from '@components/Track'
-import Pushable from '@components/Pushable'
 
 import { PostData, PostDir, PostFile, readPosts } from '@lib/posts'
 import { findData, genPath, genUrl, PostPaths } from '@lib/post_utils'
@@ -28,11 +28,11 @@ interface ParseQuery extends ParsedUrlQuery {
   slug: string[]
 }
 
-const getTracks = (tree: PostPaths, slug: string[]): Trackable[] => {
-  const dir = tree.find(
-    a => a.type == 'Dir' && genUrl(a.name) == slug[0]
-  ) as PostDir
+const findDir = (tree: PostPaths, name: string): PostDir =>
+  tree.find(a => a.type == 'Dir' && genUrl(a.name) == name) as PostDir
 
+const getTracks = (tree: PostPaths, slug: string[]): Trackable[] => {
+  const dir = findDir(tree, slug[0])
   const current = dir.posts.findIndex(post => post.filename == slug[1])
 
   return dir.posts

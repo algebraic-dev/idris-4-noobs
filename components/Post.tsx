@@ -7,6 +7,7 @@ import Paragraph from '@components/Paragraph'
 import InlineCode from '@components/InlineCode'
 import Header from '@components/Header'
 import { Track, Trackable } from '@components/Track'
+import Quiz from '@components/Quiz'
 import Url from '@components/Url'
 
 import { Box } from '@chakra-ui/react'
@@ -20,6 +21,7 @@ const components = {
   h2: Header,
   inlineCode: InlineCode,
   a: Url,
+  Quiz: Quiz,
 }
 
 interface Props {
