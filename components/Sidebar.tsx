@@ -1,5 +1,6 @@
-import { Box, Text, Flex, Spacer, chakra, Img, Center } from '@chakra-ui/react'
-import { PostDir, PostFile } from '@lib/posts'
+import { Box, Flex, Spacer, chakra, Img, Center } from '@chakra-ui/react'
+import { PostFile } from '@lib/posts'
+import { PostPaths } from '@lib/post_utils'
 import { VscChromeClose } from 'react-icons/vsc'
 import ArticleTree from './ArticleTree'
 
@@ -7,7 +8,7 @@ interface Props {
   enabled: boolean
   blackTheme: boolean
   onClick: () => void
-  fileTree: (PostDir | PostFile)[]
+  fileTree: PostPaths
   selected?: PostFile
 }
 

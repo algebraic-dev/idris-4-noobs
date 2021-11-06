@@ -11,7 +11,7 @@ import Sidebar from '@components/Sidebar'
 import Post from '@components/Post'
 import Menu from '@components/Menu'
 
-import { PostData, PostDir, PostFile, readPosts } from '@lib/posts'
+import { PostDir, PostFile, readPosts } from '@lib/posts'
 import { findData, genPath, genUrl, PostPaths } from '@lib/post_utils'
 
 interface Props {
@@ -36,12 +36,12 @@ const getTracks = (tree: PostPaths, slug: string[]): Trackable[] => {
   const current = dir.posts.findIndex(post => post.filename == slug[1])
 
   return dir.posts
-    .map((a, i): [PostFile, number] => [a, i])
+    .map((post, index): [PostFile, number] => [post, index])
     .slice(Math.max(current - 1, 0), current + 2)
-    .map(([a, i]) => ({
-      number: i + 1,
-      title: a.data.data.title,
-      url: genUrl(slug[0]) + '/' + a.filename,
+    .map(([post, index]) => ({
+      number: index + 1,
+      title: post.data.data.title,
+      url: genUrl(slug[0]) + '/' + post.filename,
     }))
 }
 
@@ -73,11 +73,11 @@ export const getStaticProps = async (context: { params: ParseQuery }) => {
   const posts: PostPaths = JSON.parse(data.toString('utf-8'))
 
   // Ignores the possibility of null.
-  const post = findData(posts, context.params.slug)?.data as PostData
+  const post = findData(posts, context.params.slug) as PostFile
 
   return {
     props: {
-      source: await serialize(post.content),
+      source: await serialize(post.data.content),
       data: post.data,
       tree: posts,
       slug: context.params.slug,

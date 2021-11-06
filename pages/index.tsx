@@ -1,6 +1,5 @@
 import { Box as Link, Text as Paragraph, chakra } from '@chakra-ui/react'
 import { FaArrowRight } from 'react-icons/fa'
-import { PostDir, PostFile } from '@lib/posts'
 import { readPosts } from '@lib/posts'
 import { useState } from 'react'
 

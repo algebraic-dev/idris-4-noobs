@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Collapse, Spacer } from '@chakra-ui/react'
+import { Box, Collapse, Spacer, Text } from '@chakra-ui/react'
 import { FaCheck, FaTimes } from 'react-icons/fa'
 
 type State =
@@ -7,11 +7,15 @@ type State =
   | { type: 'correct'; selected: number }
   | { type: 'not selected' }
 
-interface Props {
+interface Question {
   question: React.ReactNode
   alts: string[]
   correct: number
   final: string
+}
+
+interface Props {
+  questions: Question[]
 }
 
 interface ButtonProps {
@@ -79,13 +83,29 @@ const Button = ({ children, onClick, bgColor, icon }: ButtonProps) => {
   )
 }
 
-const Quiz = ({ question, alts, correct, final }: Props) => {
+const Quiz = ({ questions }: Props) => {
   let [state, setState] = useState<State>({ type: 'not selected' })
-  let [enumerated] = useState<[string, number][]>(shuffle(enumerate(alts)))
+  let [current, setCurrent] = useState<number>(0)
+  let { question, alts, correct, final } = questions[current]
+
+  let [enumerated, setAlts] = useState<[string, number][]>(
+    shuffle(enumerate(alts))
+  )
+
+  const nextQuestion = () => {
+    let cur = current + 1 >= questions.length ? 0 : current + 1
+    setCurrent(cur)
+
+    let { alts } = questions[cur]
+    setAlts(shuffle(enumerate(alts)))
+    setState({ type: 'not selected' })
+  }
 
   const select = (idx: number): void => {
     if (idx == correct) {
       setState({ type: 'correct', selected: idx })
+      setTimeout(() => setState({ type: 'not selected' }), 1800)
+      setTimeout(() => nextQuestion(), 2000)
     } else {
       setState({ type: 'wrong', selected: idx })
     }
@@ -108,6 +128,9 @@ const Quiz = ({ question, alts, correct, final }: Props) => {
 
   return (
     <Box borderRadius={5} w="100%" p={5} pb={12} my={5}>
+      <Text>
+        Q. {current + 1} / {questions.length}
+      </Text>
       <Box p={5} py={10} textAlign="center">
         {question}
       </Box>

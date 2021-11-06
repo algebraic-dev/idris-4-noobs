@@ -5,12 +5,12 @@ interface Props {
   width?: string
 }
 
-const Paragraph = ({ children, width }: Props) => {
+const Paragraph = ({ children, width = '100%' }: Props) => {
   return (
     <Text
       mb="1"
       textAlign="justify"
-      w={width ? width : '100%'}
+      w={width}
       textColor="brand.text-faded"
       lineHeight="8"
     >

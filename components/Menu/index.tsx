@@ -1,4 +1,4 @@
-import { Text, Flex, Spacer, Input, chakra } from '@chakra-ui/react'
+import { Text, Flex, Spacer, chakra } from '@chakra-ui/react'
 import { VscMenu } from 'react-icons/vsc'
 
 import styles from './index.module.css'
