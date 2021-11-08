@@ -9,11 +9,10 @@ interface Props {
   children: string
   className: string
   width?: string
-  my?: number
   p?: number
 }
 
-const Code = ({ className, children, width, p = 10, my = 10 }: Props) => {
+const Code = ({ className, children, width, p = 10 }: Props) => {
   useEffect(() => {
     Prism.highlightAll()
   }, [])

@@ -8,6 +8,7 @@ import {
 
 import { PostDir, PostFile } from '@lib/posts'
 import { PostPaths } from '@lib/post_utils'
+import Link from 'next/link'
 
 type ArticleItemProps = {
   fileTree: PostDir | PostFile
@@ -72,25 +73,26 @@ const ArticleItem = ({ fileTree, depth, url, selected }: ArticleItemProps) => {
     }
     case 'File': {
       return (
-        <AccordionItem
-          py={2}
-          px={2}
-          my={1}
-          borderY="none"
-          borderRight="none"
-          borderLeftColor={
-            selected == fileTree ? 'brand.text-side-faded' : 'transparent'
-          }
-          borderLeftWidth="3px"
-          transition="0.2s background"
-          _hover={{
-            bgColor: 'rgba(0,0,0, 0.1)',
-          }}
-        >
-          <a href={url + '/' + fileTree.filename}>
+        <Link href={url + '/' + fileTree.filename} passHref>
+          <AccordionItem
+            cursor="pointer"
+            py={2}
+            px={2}
+            my={1}
+            borderY="none"
+            borderRight="none"
+            borderLeftColor={
+              selected == fileTree ? 'brand.text-side-faded' : 'transparent'
+            }
+            borderLeftWidth="3px"
+            transition="0.2s background"
+            _hover={{
+              bgColor: 'rgba(0,0,0, 0.1)',
+            }}
+          >
             <File name={fileTree.data.data.title}></File>
-          </a>
-        </AccordionItem>
+          </AccordionItem>
+        </Link>
       )
     }
   }

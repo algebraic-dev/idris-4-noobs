@@ -1,7 +1,7 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { ParsedUrlQuery } from 'querystring'
 import { serialize } from 'next-mdx-remote/serialize'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import fs from 'fs/promises'
 
@@ -10,6 +10,8 @@ import { Trackable } from '@components/Track'
 import Sidebar from '@components/Sidebar'
 import Post from '@components/Post'
 import Menu from '@components/Menu'
+
+import Head from 'next/head'
 
 import { PostDir, PostFile, readPosts } from '@lib/posts'
 import { findData, genPath, genUrl, PostPaths } from '@lib/post_utils'
@@ -46,21 +48,52 @@ const getTracks = (tree: PostPaths, slug: string[]): Trackable[] => {
 }
 
 const Page = ({ source, data, tree, slug }: Props) => {
-  const [state, setState] = useState(true)
+  const [state, setState] = useState(false)
+  const [isMounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    let str = window.localStorage.getItem('menu')
+
+    if (window.innerWidth < 600) {
+      setState(false)
+    } else {
+      setState(str ? str === 'true' : state)
+    }
+
+    // Just to make the animation not bounce in the beggining..
+    setTimeout(() => setMounted(true))
+
+    // Cannot use this rule because React would render it
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const tracks = getTracks(tree, slug)
   const post = findData(tree, slug) as PostFile
+
+  const setMenu = () => {
+    setState(!state)
+    if (typeof window != 'undefined') {
+      localStorage.setItem('menu', !state ? 'true' : 'false')
+    }
+  }
+
   return (
     <>
+      <Head>
+        <title>Idris2Noobs - {post.data.data.title}</title>
+        <meta name="description" content={post.data.data.description} />
+      </Head>
+
       <Sidebar
         enabled={state}
-        blackTheme={false}
-        onClick={() => setState(!state)}
+        onClick={setMenu}
         fileTree={tree}
         selected={post}
+        isMounted={isMounted}
       ></Sidebar>
 
-      <Pushable enabled={state} size="20em">
-        <Menu color={'black'} onClick={() => setState(!state)}></Menu>
+      <Pushable enabled={state} size="20em" isMounted={isMounted}>
+        <Menu color={'black'} onClick={setMenu}></Menu>
         <Post source={source} header={data} tracks={tracks}></Post>
         <Box margin="100" w="100%"></Box>
       </Pushable>
@@ -78,7 +111,7 @@ export const getStaticProps = async (context: { params: ParseQuery }) => {
   return {
     props: {
       source: await serialize(post.data.content),
-      data: post.data,
+      data: post.data.data,
       tree: posts,
       slug: context.params.slug,
     },
@@ -89,7 +122,7 @@ export const getStaticPaths = async () => {
   const posts = await readPosts('posts')
   await fs.writeFile('/tmp/.idris2noobs', JSON.stringify(posts))
 
-  const paths = genPath(posts).map(([path, url]) => ({
+  const paths = genPath(posts).map(([path]) => ({
     params: {
       slug: path.split('/'),
     },

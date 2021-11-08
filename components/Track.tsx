@@ -1,7 +1,7 @@
 import { Text, Box } from '@chakra-ui/react'
+import Link from 'next/link'
 
 interface CircleProps {
-  marked: boolean
   title: string
   number: number
   url: string
@@ -15,8 +15,8 @@ interface Trackable {
 
 const Line = () => <Box w="12" h="1" bgColor="brand.main"></Box>
 
-const Circular = ({ marked, title, number, url }: CircleProps) => (
-  <a href={'/posts/' + url}>
+const Circular = ({ title, number, url }: CircleProps) => (
+  <Link href={'/posts/' + url} passHref>
     <Box
       w="14"
       h="14"
@@ -62,18 +62,12 @@ const Circular = ({ marked, title, number, url }: CircleProps) => (
         {title}
       </Box>
     </Box>
-  </a>
+  </Link>
 )
 
 const Track = ({ tracks }: { tracks: Trackable[] }) => {
   const mapped = tracks.map(({ number, title, url }: Trackable) => (
-    <Circular
-      marked={true}
-      number={number}
-      title={title}
-      key={title}
-      url={url}
-    ></Circular>
+    <Circular number={number} title={title} key={title} url={url}></Circular>
   ))
 
   return (

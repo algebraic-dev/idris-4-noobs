@@ -16,7 +16,13 @@ const Header = ({ children, my = 12 }: Props) => {
       mb="2"
       fontWeight="600"
     >
-      <Link textDecoration="none" href={`#${id}`} id={id} fontFamily="Lato">
+      <Link
+        textDecoration="none"
+        letterSpacing="1px"
+        href={`#${id}`}
+        id={id}
+        fontFamily="Lato"
+      >
         {children}
       </Link>
     </Box>

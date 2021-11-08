@@ -1,14 +1,18 @@
 import { Box as Link, Text as Paragraph, chakra } from '@chakra-ui/react'
 import { FaArrowRight } from 'react-icons/fa'
-import { readPosts } from '@lib/posts'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import NextLink from 'next/link'
 
 import Sidebar from '@components/Sidebar'
 import Menu from '@components/Menu'
 import Code from '@components/Code'
 import Header from '@components/Header'
 import Pushable from '@components/Pushable'
+
 import { PostPaths } from '@lib/post_utils'
+import { readPosts } from '@lib/posts'
+import Lambda from '@components/Lambda'
 
 const example = `IntOrString : (isInt : Bool) -> Type
 IntOrString True = Int
@@ -19,48 +23,81 @@ getAnswer True = 42
 getAnswer False = "Hello, World!"
 `
 
-const Button = ({ children }: { children: string }) => (
-  <Link
-    display="flex"
-    alignItems="center"
-    justifyContent="center"
-    cursor="pointer"
-    textAlign="center"
-    gridGap={7}
-    flexGrow={1}
-    transition="ease-in-out"
-    transitionDuration="200ms"
-    transitionTimingFunction="ease-in-out"
-    py={3}
-    my={['5', '5', '0']}
-    border="1px solid gray"
-    _hover={{
-      bgColor: 'gray',
-      textColor: 'white',
-    }}
-  >
-    {children}
-    <FaArrowRight />
-  </Link>
+const Button = ({ children, href }: { children: string; href: string }) => (
+  <NextLink href={href}>
+    <Link
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      cursor="pointer"
+      textAlign="center"
+      gridGap={7}
+      flexGrow={1}
+      transition="ease-in-out"
+      transitionDuration="200ms"
+      transitionTimingFunction="ease-in-out"
+      py={3}
+      my={['5', '5', '1']}
+      border="1px solid gray"
+      _hover={{
+        bgColor: 'gray',
+        textColor: 'white',
+      }}
+    >
+      {children}
+      <FaArrowRight />
+    </Link>
+  </NextLink>
 )
 
 const Index = ({ tree }: { tree: PostPaths }) => {
   const [state, setState] = useState(true)
+  const [isMounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    let str = window.localStorage.getItem('menu')
+
+    if (window.innerWidth < 600) {
+      setState(false)
+    } else {
+      setState(str ? str === 'true' : state)
+    }
+
+    // Just to make the animation not bounce in the beggining..
+    setTimeout(() => setMounted(true))
+
+    // Cannot use this rule because Next.js would render it
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const setMenu = () => {
+    setState(!state)
+    if (typeof window != 'undefined') {
+      localStorage.setItem('menu', !state ? 'true' : 'false')
+    }
+  }
 
   return (
     <>
+      <Head>
+        <title>Idris2Noobs - Home</title>
+        <meta
+          name="description"
+          content="Idris2Noobs is a website to learn how to program in the dependently typed language called Idris2"
+        />
+      </Head>
       <Sidebar
         enabled={state}
-        blackTheme={false}
-        onClick={() => setState(!state)}
+        onClick={setMenu}
         fileTree={tree}
+        isMounted={isMounted}
       ></Sidebar>
-
-      <Pushable enabled={state} size="20em">
-        <Menu color="black" onClick={() => setState(!state)}></Menu>
+      <Pushable enabled={state} size="20em" isMounted={isMounted}>
+        <Menu color="black" onClick={setMenu}></Menu>
         <Link w={['80%', '80%', '80%']} margin="auto">
-          <chakra.hr my={4} />
-          <Header my={8}>Idris2Noobs</Header>
+          <Lambda />
+          <chakra.hr />
+          <Header my={12}>Idris2Noobs</Header>
           <Link
             display={{ md: 'box', lg: 'flex' }}
             gridGap={10}
@@ -71,6 +108,7 @@ const Index = ({ tree }: { tree: PostPaths }) => {
                 Idris2Noobs é um website feito para pessoas que querem aprender
                 ou melhorar a arte de programar em Idris.{' '}
               </chakra.p>
+              <br />
               <chakra.p textColor="brand.text-faded">
                 Idris2 é uma linguagem de programação <strong>funcional</strong>{' '}
                 com <strong>tipos dependentes</strong> que encoraja voce a
@@ -79,15 +117,15 @@ const Index = ({ tree }: { tree: PostPaths }) => {
               </chakra.p>
             </Paragraph>
             <Link my={{ md: 10, lg: 0 }} w={{ md: '100%', lg: '50%' }}>
-              <Code my={6} p={0} className="language-idris">
+              <Code p={0} className="language-idris">
                 {example}
               </Code>
             </Link>
           </Link>
-          <Link display={{ md: 'box', lg: 'flex' }} gridGap={10} my={8}>
-            <Button>Começar!</Button>
-            <Button>Discord Server</Button>
-            <Button>Abra um Issue!</Button>
+          <Link display={{ md: 'box', lg: 'flex' }} gridGap={10} my={12}>
+            <Button href="/posts/introdução/funcoes">Começar!</Button>
+            <Button href="/">Discord Server</Button>
+            <Button href="/">Abra um Issue!</Button>
           </Link>
           <chakra.hr my={10} />
           <Header my={24}>Mas para que aprender Idris?</Header>
@@ -126,11 +164,8 @@ const Index = ({ tree }: { tree: PostPaths }) => {
 
 export const getStaticProps = async () => {
   const posts = await readPosts('posts')
-
   return {
-    props: {
-      tree: posts,
-    },
+    props: { tree: posts },
   }
 }
 
