@@ -3,8 +3,7 @@ import type { AppProps } from 'next/app'
 import 'styles/syntaxhighlight.css'
 import 'styles/global.css'
 
-import { ChakraProvider } from '@chakra-ui/react'
-import { extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const colors = {
   brand: {

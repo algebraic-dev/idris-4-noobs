@@ -1,5 +1,6 @@
-import { Text, Flex, Spacer, chakra } from '@chakra-ui/react'
+import { Text, Flex, Spacer, Box } from '@chakra-ui/react'
 import { VscMenu } from 'react-icons/vsc'
+import Link from 'next/link'
 
 import styles from './index.module.css'
 
@@ -9,9 +10,9 @@ interface Props {
 }
 
 const Item = ({ href, children }: Props) => (
-  <chakra.a href={href} textColor="black" className={styles['menu-item']}>
-    {children}
-  </chakra.a>
+  <Box textColor="black" className={styles['menu-item']}>
+    <Link href={href}>{children}</Link>
+  </Box>
 )
 
 const Menu = ({ onClick, color }: { color: string; onClick: () => void }) => (

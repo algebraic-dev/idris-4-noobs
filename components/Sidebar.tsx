@@ -1,15 +1,16 @@
 import { Box, Flex, Spacer, chakra, Img, Center } from '@chakra-ui/react'
-import { PostFile } from '@lib/posts'
-import { PostPaths } from '@lib/post_utils'
 import { VscChromeClose } from 'react-icons/vsc'
 import ArticleTree from './ArticleTree'
 
+import { PostFile } from '@lib/posts'
+import { PostPaths } from '@lib/post_utils'
+
 interface Props {
   enabled: boolean
-  blackTheme: boolean
   onClick: () => void
   fileTree: PostPaths
   selected?: PostFile
+  isMounted: boolean
 }
 
 const Logo = () => (
@@ -42,39 +43,41 @@ const scrollBar = {
 
 const Sidebar = ({
   enabled,
-  blackTheme,
   onClick,
   fileTree,
   selected,
-}: Props) => (
-  <Box
-    w={['100vw', '20rem']}
-    h="100vh"
-    top="0"
-    left="0"
-    bottom="0"
-    bgColor="brand.main"
-    position="fixed"
-    zIndex="1"
-    overflow="auto"
-    transform={`translate(${enabled ? '0%' : '-100%'})`}
-    transition="ease-in-out"
-    transitionDuration="700ms"
-    transitionTimingFunction="ease-in-out"
-    p="15px"
-    css={scrollBar}
-  >
-    <Flex paddingY="15px" textColor="brand.text-main" paddingX="10px">
-      <Logo />
-      <Spacer />
-      <Center display={{ md: 'none', lg: 'box' }}>
-        <VscChromeClose size={16} onClick={() => onClick()} />
-      </Center>
-    </Flex>
-    <Box pt="10px">
-      <ArticleTree fileTree={fileTree} selected={selected}></ArticleTree>
+  isMounted,
+}: Props) => {
+  return (
+    <Box
+      w={['100vw', '20rem']}
+      h="100vh"
+      top="0"
+      left="0"
+      bottom="0"
+      bgColor="brand.main"
+      position="fixed"
+      zIndex="1"
+      overflow="auto"
+      transform={`translate(${enabled ? '0%' : '-100%'})`}
+      transition="ease-in-out"
+      transitionDuration={isMounted ? '700ms' : '0ms'}
+      transitionTimingFunction="ease-in-out"
+      p="15px"
+      css={scrollBar}
+    >
+      <Flex paddingY="15px" textColor="brand.text-main" paddingX="10px">
+        <Logo />
+        <Spacer />
+        <Center display={{ md: 'none', lg: 'box' }}>
+          <VscChromeClose size={16} onClick={() => onClick()} />
+        </Center>
+      </Flex>
+      <Box pt="10px">
+        <ArticleTree fileTree={fileTree} selected={selected}></ArticleTree>
+      </Box>
     </Box>
-  </Box>
-)
+  )
+}
 
 export default Sidebar

@@ -1,0 +1,23 @@
+{
+  "name": "Idris2Noobs",
+  "short_name": "I2N",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Logo128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+
+    {
+      "src": "/Logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
