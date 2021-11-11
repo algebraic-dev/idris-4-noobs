@@ -10,27 +10,37 @@ Uma introdução a linguagem de programação Idris2 em português.
 
 # Sumário
 
-## 1. Introdução
-- [O que é Idris?](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#11-o-que-é-idris)
-- [Diferenças entre Idris1 e Idris2](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#12-diferenças-entre-idris-1-e-idris-2)
-- [Instalação](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#13-instalação)
-  - [Para Ubuntu](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#131-usuários-de-ubuntu)
-  - [Para Linux](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#132-usuários-de-linux)
-  - [Instalação do Idris2 LSP](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#1321-instalar-o-idris2-lsp-no-linux)
-  - [Para Windows](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#133-para-usuários-de-windows)
-- [Materiais pra aprender Idris2](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#14-materiais-para-aprender-sobre-idris)
 
-## 2. Tipos primitivos e funções
-- [Tipos primitivos](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md)
-- [Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#22-definições)
-- [Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#23-funções)
-- [Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#24-currying)
-- [Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#25-recursão)
-- [Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#26-composição)
-- Let Binding
-- Where Clause
-- Type variables
-- Exercicios
+## 1. Introdução
+- [1.0 Introdução](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#1-introdução)
+- [1.1 O que é Idris](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#11-o-que-é-idris)
+- [1.2 Diferenças entre Idris 1 e Idris 2](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#12-diferenças-entre-idris-1-e-idris-2)
+- [1.3 Instalação](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#13-instalação)
+  - [1.3.1 Usuários de Ubuntu](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#131-usuários-de-ubuntu)
+  - [1.3.2 Usuários de Linux](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#132-usuários-de-linux)
+  - [1.3.2.1 Instalar o Idris2 LSP no Linux](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#1321-instalar-o-idris2-lsp-no-linux)
+  - [1.3.3 Para usuários de Windows](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#133-para-usuários-de-windows)
+- [1.4 Hello World em Idris](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#14-hello-world-em-idris)
+- [1.4 Materiais para aprender sobre Idris](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/1.introducao.md#14-materiais-para-aprender-sobre-idris)
+
+## 2. Adivinhe o número
+
+- [2. Descubra o numero!](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#2-descubra-o-numero)
+  - [2.1 Criando um projeto](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#21-criando-um-projeto)
+  - [2.2 O arquivo principal](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#22-o-arquivo-principal)
+  - [2.3 Como rodar](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#23-como-rodar)
+
+## 3. Tipos primitivos e funções
+
+- [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#3-tipos-primitivos-e-funções)
+- [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#32-definições)
+- [3.3 Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#33-funções)
+- [3.4 Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#34-currying)
+- [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#35-composição)
+- [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#36-recursão)
+- [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#37-funções-do-preludio)
+
+- 2.8 Let e Where
 
 ## 3. Brincando com IO 
 
