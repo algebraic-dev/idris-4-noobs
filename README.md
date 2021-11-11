@@ -26,9 +26,9 @@ Uma introdução a linguagem de programação Idris2 em português.
 ## 2. Adivinhe o número
 
 - [2. Descubra o numero!](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#2-descubra-o-numero)
-  - [2.1 Criando um projeto](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#21-criando-um-projeto)
-  - [2.2 O arquivo principal](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#22-o-arquivo-principal)
-  - [2.3 Como rodar](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#23-como-rodar)
+- [2.1 Criando um projeto](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#21-criando-um-projeto)
+- [2.2 O arquivo principal](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#22-o-arquivo-principal)
+- [2.3 Como rodar](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#23-como-rodar)
 
 ## 3. Tipos primitivos e funções
 
@@ -39,7 +39,6 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#35-composição)
 - [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#36-recursão)
 - [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#37-funções-do-preludio)
-
 - 2.8 Let e Where
 
 ## 3. Brincando com IO 
