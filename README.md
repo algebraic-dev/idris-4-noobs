@@ -1,3 +1,12 @@
+<h1>Idris2Noobs</h1>
+
+Uma introdução a linguagem de programação Idris2 em português.
+
+# Todo
+
+- [ ] Escrever tudo
+- [ ] Melhorar site e botar questões como Quiz
+- [ ] Refazer os desenhos pra deixar mais explicativos
 
 # Sumário
 
