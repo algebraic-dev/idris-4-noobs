@@ -32,14 +32,13 @@ Uma introdução a linguagem de programação Idris2 em português.
 
 ## 3. Tipos primitivos e funções
 
-- [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#3-tipos-primitivos-e-funções)
-- [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#32-definições)
-- [3.3 Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#33-funções)
-- [3.4 Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#34-currying)
-- [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#35-composição)
-- [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#36-recursão)
-- [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.guess.md#37-funções-do-preludio)
-
+- [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#3-tipos-primitivos-e-funções)
+- [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#32-definições)
+- [3.3 Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#33-funções)
+- [3.4 Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#34-currying)
+- [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#35-composição)
+- [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#36-recursão)
+- [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#37-funções-do-preludio)
 - 2.8 Let e Where
 
 ## 3. Brincando com IO 
