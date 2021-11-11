@@ -1,0 +1,4 @@
+package descubra-o-numero
+
+main = Main
+executable = "main"

@@ -27,12 +27,13 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#24-currying)
 - [Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#25-recursão)
 - [Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.types.md#26-composição)
-- Type variables
-- IO
 - Let Binding
 - Where Clause
+- Type variables
 - Exercicios
-- 
+
+## 3. Brincando com IO 
+
 ## 3. Tipos algebricos
 - Records
 - Produtos e Coprodutos
