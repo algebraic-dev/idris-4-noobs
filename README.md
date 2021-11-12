@@ -30,7 +30,7 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [2.2 O arquivo principal](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.guess.md#22-o-arquivo-principal)
 - [2.3 Como rodar](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.guess.md#23-como-rodar)
 
-## 3. Tipos primitivos e funções
+## 3. Tipos primitivos, funções e coisas uteis
 
 - [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#3-tipos-primitivos-e-funções)
 - [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#32-definições)
@@ -42,18 +42,18 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [3.8 Let e Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#38-let-e-where)
   - [3.8.1 Let bindings](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#381-let-bindings)
   - [3.8.2 Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#382-where)
-  - [3.9 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#39-cast-e-the)
-
+- [3.9 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#39-cast-e-the)
+- [3.10 Expressão If](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#310-expressão-if)
+- 
 ## 3. Brincando com IO 
 - [4. Brincando com IO](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#4-brincando-com-io)
 - [4.1 PrintLn e PutStrLn](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#41-println-e-putstrln)
 - [5.2 Notação `do`](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#52-notação-do)
 - [5.3 getLine](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#53-getline)
 
-
 ## 3. Tipos algebricos
-- Records
 - Produtos e Coprodutos
+- Records
 - Type e Data Constructors
 - Variáveis de tipo
 - Exemplos de ADT
