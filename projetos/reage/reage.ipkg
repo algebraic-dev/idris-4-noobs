@@ -1,0 +1,5 @@
+package reage
+
+main = Main
+sourcedir = "src"
+executable = "main"
