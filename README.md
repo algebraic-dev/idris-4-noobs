@@ -34,40 +34,58 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [2.2 O arquivo principal](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.guess.md#22-o-arquivo-principal)
 - [2.3 Como rodar](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/2.guess.md#23-como-rodar)
 
-## 3. Tipos primitivos, funções e coisas uteis
+## 3. Tipos primitivos e funções
 
-- [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#3-tipos-primitivos-e-funções)
-- [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#32-definições)
-- [3.3 Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#33-funções)
-- [3.4 Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#34-currying)
-- [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#35-composição)
-- [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#36-recursão)
-- [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#37-funções-do-preludio)
-- [3.8 Let e Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#38-let-e-where)
-  - [3.8.1 Let bindings](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#381-let-bindings)
-  - [3.8.2 Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#382-where)
-- [3.9 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#39-cast-e-the)
-- [3.10 Expressão If](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types.md#310-expressão-if)
-- 
-## 3. Brincando com IO 
-- [4. Brincando com IO](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#4-brincando-com-io)
-- [4.1 PrintLn e PutStrLn](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#41-println-e-putstrln)
-- [5.2 Notação `do`](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#52-notação-do)
-- [5.3 getLine](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.io.md#53-getline)
+- [3.1 Tipos primitivos e funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#3-tipos-primitivos-e-funções)
+- [3.2 Definições](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#32-definições)
+- [3.3 Funções](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#33-funções)
+- [3.4 Currying](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#34-currying)
+- [3.5 Composição](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#35-composição)
+- [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#36-recursão)
+- [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#37-funções-do-preludio)
+- [3.8 Totalidade e Holes](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#38-totalidade-e-holes)
 
-## 3. Tipos algebricos
-- Produtos e Coprodutos
+## 4. Estruturas úteis
+- [4 Expressões Úteis](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#4-expressões-úteis)
+- [4.1 Let e Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#41-let-e-where)
+- [4.1.1 Let bindings](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#411-let-bindings)
+- [4.1.2 Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#412-where)
+- [4.2 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#42-cast-e-the)
+- [4.3 Expressão If](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#43-expressão-if)
+- [4.4 Case](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#44-case)
+  - 
+## 5. Brincando com IO 
+- [4. Brincando com IO](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#4-brincando-com-io)
+- [4.1 PrintLn e PutStrLn](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#41-println-e-putstrln)
+- [5.2 Notação `do`](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#52-notação-do)
+- [5.3 getLine](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#53-getline)
+
+## 6. Tipos algebricos e compostos.
+- [6.1 Listas](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#61-listas)
+- [6.1.1 Funções úteis e o módulo Data.List](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#611-funções-úteis-e-o-módulo-datalist)
+- [6.2 Type variables](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-variables)
+- [6.2 Type Constructors e Data Constructors](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-constructors-e-data-constructors)
 - Records
-- Type e Data Constructors
-- Variáveis de tipo
 - Exemplos de ADT
   - Listas Encadeadas
   - Maybe 
   - Either 
 - Pattern matching
 - Exercicios
-- 
-## 4. Dependent Types
+
+## 8. Interfaces
+- Interfaces
+- Extendendo Interfaces
+- Constraints
+- Categorias
+  - Functor
+  - Semigroup
+  - Monoid
+  - Applicative
+  - Monad
+- Exercicios
+  
+## 9. Dependent Types
 - Tipos de primeira classe
 - Tipos dependendo de termos
 - Dependent Records
@@ -82,19 +100,7 @@ Uma introdução a linguagem de programação Idris2 em português.
   - Server Path Dependente
 - Exercicios
 
-## 5. Interfaces
-- Interfaces
-- Extendendo Interfaces
-- Constraints
-- Categorias
-  - Functor
-  - Semigroup
-  - Monoid
-  - Applicative
-  - Monad
-- Exercicios
-
-## 6. Multiplices
+## 10. Multiplices
 - Linear Types
 - Exemplos:
   - A porta 
