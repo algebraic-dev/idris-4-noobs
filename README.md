@@ -53,7 +53,7 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [4.2 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#42-cast-e-the)
 - [4.3 Expressão If](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#43-expressão-if)
 - [4.4 Case](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#44-case)
-  - 
+
 ## 5. Brincando com IO 
 - [4. Brincando com IO](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#4-brincando-com-io)
 - [4.1 PrintLn e PutStrLn](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/5.io.md#41-println-e-putstrln)
