@@ -1,5 +1,9 @@
 <h1>Idris2Noobs</h1>
 
+<p align="center">
+  <img src="https://i.imgur.com/r5szXPt.png" width="400px">
+</p>
+
 Uma introdução a linguagem de programação Idris2 em português.
 
 # Todo
