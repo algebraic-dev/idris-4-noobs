@@ -48,8 +48,8 @@ Uma introdução a linguagem de programação Idris2 em português.
 ## 4. Estruturas úteis
 - [4 Expressões Úteis](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#4-expressões-úteis)
 - [4.1 Let e Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#41-let-e-where)
-- [4.1.1 Let bindings](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#411-let-bindings)
-- [4.1.2 Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#412-where)
+  - [4.1.1 Let bindings](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#411-let-bindings)
+  - [4.1.2 Where](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#412-where)
 - [4.2 Cast e The](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#42-cast-e-the)
 - [4.3 Expressão If](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#43-expressão-if)
 - [4.4 Case](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#44-case)
@@ -62,7 +62,7 @@ Uma introdução a linguagem de programação Idris2 em português.
 
 ## 6. Tipos algebricos e compostos.
 - [6.1 Listas](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#61-listas)
-- [6.1.1 Funções úteis e o módulo Data.List](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#611-funções-úteis-e-o-módulo-datalist)
+  - [6.1.1 Funções úteis e o módulo Data.List](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#611-funções-úteis-e-o-módulo-datalist)
 - [6.2 Type variables](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-variables)
 - [6.2 Type Constructors e Data Constructors](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-constructors-e-data-constructors)
 - Records
