@@ -44,6 +44,7 @@ Uma introdução a linguagem de programação Idris2 em português.
 - [3.6 Recursão](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#36-recursão)
 - [3.7 Funções do Preludio](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#37-funções-do-preludio)
 - [3.8 Totalidade e Holes](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#38-totalidade-e-holes)
+- [3.9 Funções de ordem alta](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/3.types-functions.md#39-funções-de-ordem-alta)
 
 ## 4. Estruturas úteis
 - [4 Expressões Úteis](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/4.estruturas.md#4-expressões-úteis)
