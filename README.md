@@ -66,12 +66,13 @@ Uma introdução a linguagem de programação Idris2 em português.
   - [6.1.1 Funções úteis e o módulo Data.List](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#611-funções-úteis-e-o-módulo-datalist)
 - [6.2 Type variables](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-variables)
 - [6.2 Type Constructors e Data Constructors](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#62-type-constructors-e-data-constructors)
-- Records
-- Exemplos de ADT
-  - Listas Encadeadas
-  - Maybe 
-  - Either 
-- Pattern matching
+- [6.3 Records](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#63-records)
+- [6.4 Exemplos de ADT](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#64-exemplos-de-adt)
+  - [6.4.1 Listas](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#641-listas)
+  - [6.4.2 Maybe](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#642-maybe)
+  - [6.4.3 Either](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#643-either)
+  - [6.4.4 Tuplas](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#644-tuplas)
+- [6.5 Pattern matching](https://github.com/felipegchi/Idris2Noobs/blob/main/1.Introducao/6.algebraic.md#65-pattern-matching)
 - Exercicios
 
 ## 8. Interfaces
